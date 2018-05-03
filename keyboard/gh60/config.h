@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#undef BACKLIGHT_ENABLE
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED

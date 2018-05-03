@@ -54,6 +54,8 @@ void matrix_init(void)
         matrix[i] = 0;
         matrix_debouncing[i] = 0;
     }
+    //turn off esc led
+    DDRF &= ~(1<<6); PORTF &= ~(1<<6);
 }
 
 uint8_t matrix_scan(void)
