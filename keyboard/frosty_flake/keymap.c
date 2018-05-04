@@ -92,11 +92,14 @@ uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
 /* translates Fn keycode to action */
 action_t keymap_fn_to_action(uint8_t keycode)
 {
-    action_t action;
+    //action_t action;
     if (FN_INDEX(keycode) < FN_ACTIONS_SIZE) {
-        action.code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]);
+        //action.code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]);
+        return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
     } else {
-        action.code = ACTION_NO;
+        //action.code = ACTION_NO;
+        return (action_t){ .code = 0};
     }
-    return action;
+    //return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
+    //return action;
 }

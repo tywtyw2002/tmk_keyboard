@@ -1,5 +1,5 @@
 
-static const uint8_t PROGMEM keymaps[][MATRIX_COLS][MATRIX_ROWS] = {
+const uint8_t PROGMEM keymaps[][MATRIX_COLS][MATRIX_ROWS] = {
     /* Layer 0: Standard ANSI layer */
     KEYMAP(\
          ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11,  F12,        PSCR,SLCK,PAUS, \
@@ -25,16 +25,16 @@ static const uint8_t PROGMEM keymaps[][MATRIX_COLS][MATRIX_ROWS] = {
          TRNS,TRNS,UP,  TRNS,TRNS,TRNS,CALC,TRNS,INS, TRNS,PSCR,SLCK,PAUS,TRNS,   DEL, END, PGDN, \
          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGUP,     TRNS,                   \
          TRNS,TRNS,TRNS,APP, TRNS,TRNS,TRNS,VOLD,VOLU,MUTE,END, PGDN,     TRNS,        UP,        \
-         TRNS,TRNS,TRNS,          SPC,                     TRNS,TRNS,TRNS,TRNS,   LEFT,DOWN,RGHT), \
+         TRNS,TRNS,TRNS,          SPC,                      TRNS,TRNS,TRNS,TRNS,   LEFT,DOWN,RGHT), \
 
     /* Layer 3: Layout selector */
     KEYMAP(\
-        FN3 ,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,        TRNS,TRNS,TRNS, \
-        FN4 ,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,   TRNS,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,        TRNS,TRNS,TRNS, \
+        TRNS,FN3, FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,   TRNS,TRNS,TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,   TRNS,TRNS,TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                   \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,        TRNS,      \
-        TRNS,TRNS,TRNS,               TRNS,               TRNS,TRNS,TRNS,TRNS,   TRNS,TRNS,TRNS)
+        TRNS,TRNS,TRNS,               FN2,               TRNS,TRNS,TRNS,TRNS,   TRNS,TRNS,TRNS)
 
 /*
  *    KEYMAP(\
@@ -47,10 +47,10 @@ static const uint8_t PROGMEM keymaps[][MATRIX_COLS][MATRIX_ROWS] = {
  */
 };
 
-static const uint16_t PROGMEM fn_actions[] = {
+const action_t PROGMEM fn_actions[] = {
     [0] = ACTION_LAYER_MOMENTARY(2),  // to Fn overlay
     [1] = ACTION_LAYER_MOMENTARY(3),
     [2] = ACTION_LAYER_TOGGLE(2),    // toggle arrow overlay
-    [3] = ACTION_DEFAULT_LAYER_SET(1),
-    [4] = ACTION_DEFAULT_LAYER_SET(0)
+    [3] = ACTION_DEFAULT_LAYER_SET(0),
+    [4] = ACTION_DEFAULT_LAYER_SET(1)
 };
